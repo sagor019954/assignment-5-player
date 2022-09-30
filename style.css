@@ -7,6 +7,7 @@
 body {
     background-color: #434343;
     font-family: 'Manrope', sans-serif;
+    color: white;
 }
 
 .title {
@@ -21,4 +22,47 @@ body {
     width: 50%;
     text-align: center;
     padding-top: 10%;
+}
+
+.card-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.card {
+    margin: 50px;
+    background-color: black;
+
+}
+
+.card img {
+    width: 100%;
+}
+
+.card button {
+    background-color: #015196;
+    height: 42px;
+    width: 221px;
+    color: white;
+    border: none;
+    font-size: larger;
+    padding: 5px;
+}
+
+.card-text {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.card-calculation {
+    text-align: center;
+}
+
+.card-calculation input {
+    background-color: black;
+    color: white;
+    height: 35px;
+    width: 200px;
+    border: 2px solid white;
 }
