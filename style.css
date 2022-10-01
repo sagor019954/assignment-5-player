@@ -36,6 +36,11 @@ body {
 
 }
 
+.card h1 {
+    text-align: center;
+    padding-top: 10px;
+}
+
 .card img {
     width: 100%;
 }
@@ -65,4 +70,15 @@ body {
     height: 35px;
     width: 200px;
     border: 2px solid white;
+}
+
+#player-list {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;
 }
