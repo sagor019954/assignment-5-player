@@ -16,6 +16,13 @@ function TotalCosts() {
     const sum = inputManValue + inputCoachValue + totalPrice;
     const totalfield = document.getElementById('total-field');
     totalfield.innerText = sum;
+    if (isNaN(perPersonCost)) {
+        alert('Give  Value');
+
+    }
+    if (isNaN(inputManValue) || isNaN(inputCoachValue)) {
+        alert('Give Maneger and Coach Price')
+    }
 }
 
 const playerNewArray = [];
@@ -34,14 +41,21 @@ function addName(player) {
     console.log(playerNewArray);
 }
 const btns = document.getElementsByClassName('btn');
+
 const names = document.getElementsByClassName('name');
 for (let i = 0; i <= btns.length; i++) {
 
     btns[i].addEventListener('click', function () {
         const playerName = names[i];
+        console.log(playerName);
         const player = playerName.innerText;
         addName(player)
-
+        if (true && playerNewArray.length <= 5) {
+            const btnsfield = document.querySelectorAll('.btn');
+            const btnSingle = btnsfield[i];
+            btnSingle.style.backgroundColor = 'red'
+            btnSingle.disabled = true;
+        }
     })
 }
 
