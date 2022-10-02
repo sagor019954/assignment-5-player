@@ -1,68 +1,47 @@
+function TotalCosts() {
+    const perPerson = document.getElementById('per-person');
+    const perPersonString = perPerson.value;
+    const perPersonCost = parseFloat(perPersonString);
+    const playerPriceString = playerNewArray.length;
+    const playerPrice = parseFloat(playerPriceString);
+    const totalPrice = perPersonCost * playerPrice;
+    const totalExpanses = document.getElementById('total-expanses');
+    totalExpanses.innerText = totalPrice
+    const inputMan = document.getElementById('input-Man');
+    const inputManString = inputMan.value;
+    const inputManValue = parseFloat(inputManString);
+    const inputCoach = document.getElementById('input-coach');
+    const inputCoachString = inputCoach.value;
+    const inputCoachValue = parseFloat(inputCoachString)
+    const sum = inputManValue + inputCoachValue + totalPrice;
+    const totalfield = document.getElementById('total-field');
+    totalfield.innerText = sum;
+}
 
-// function btnClick() {
-//     const playerName = document.getElementsByClassName('name');
-//     console.log(playerName);
-//     const player = playerName[0]
-//     const singlePlayerName = player.value;
-//     console.log(singlePlayerName);
-//     const playerNameArray = [];
-//     playerNameArray.push(singlePlayerName);
-//     console.log(playerNameArray);
-//     const playerList = document.getElementById('player-list');
-//     const ol = document.createElement('ol');
-//     const li = document.createElement('li');
-//     li.innerText = singlePlayerName;
-//     ol.appendChild(li);
-//     playerList.appendChild(ol);
-// }
-// const btns = document.getElementsByClassName('btn-Victor')
-// console.log(btns);
-// function playerlist(nameVictor) {
+const playerNewArray = [];
+function addName(player) {
+    playerNewArray.push(player);
+    if (playerNewArray.length > 5) {
+        alert('you can not add player');
+        return;
+    }
+    const playerList = document.getElementById('player-list');
+    const ul = document.createElement('ul');
+    const li = document.createElement('li');
+    li.innerText = player;
+    ul.appendChild(li);
+    playerList.appendChild(ul);
+    console.log(playerNewArray);
+}
+const btns = document.getElementsByClassName('btn');
+const names = document.getElementsByClassName('name');
+for (let i = 0; i <= btns.length; i++) {
 
-//     const playerList = document.getElementById('player-list');
-//     const ul = document.createElement('ul');
-//     const li = document.createElement('li');
-//     li.innerText = nameVictor;
-//     ul.appendChild(li);
-//     playerList.appendChild(ul);
-//     const playList = [];
-//     playList.push(nameVictor);
+    btns[i].addEventListener('click', function () {
+        const playerName = names[i];
+        const player = playerName.innerText;
+        addName(player)
 
-// }
-
-// document.getElementById('btn-Victor').addEventListener('click', function () {
-//     const Victor = document.getElementById('name-Victor');
-//     const nameVictor = Victor.innerText;
-//     const bal = playerlist(nameVictor);
-
-
-// })
-// document.getElementById('btn-Naymer').addEventListener('click', function () {
-//     const Victor = document.getElementById('name-Naymer');
-//     const nameVictor = Victor.innerText;
-//     const sala = playerlist(nameVictor);
-
-// })
-
-// document.getElementById('btn-Messi').addEventListener('click', function () {
-//     const Victor = document.getElementById('name-Messi');
-//     const nameVictor = Victor.innerText;
-//     playerlist(nameVictor)
-// })
-// document.getElementById('btn-Ramos').addEventListener('click', function () {
-//     const Victor = document.getElementById('name-Ramos');
-//     const nameVictor = Victor.innerText;
-//     playerlist(nameVictor)
-// })
-// document.getElementById('btn-Renato').addEventListener('click', function () {
-//     const Victor = document.getElementById('name-Renato');
-//     const nameVictor = Victor.innerText;
-//     playerlist(nameVictor)
-// })
-// document.getElementById('btnMbappe').addEventListener('click', function () {
-//     const Victor = document.getElementById('nameMbappe');
-
-//     const nameVictor = Victor.innerText;
-//     playerlist(nameVictor)
-// })
+    })
+}
 
